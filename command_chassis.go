@@ -55,6 +55,26 @@ func (c *GetChassisStatusCommand) Unmarshal(buf []byte) ([]byte, error) {
 	return nil, nil
 }
 
+// Set Chassis Power Command (Section 28.3)
+type SetChassisControlCommand struct {
+	// Request Data
+	PowerState uint8
+	// 0 - power down
+	// 1 - power up
+	// 2 - power cycle
+	// 3 - hard reset
+}
+
+func (c *SetChassisControlCommand) Name() string           { return "Set Chassis Power" }
+func (c *SetChassisControlCommand) Code() uint8            { return 0x02 }
+func (c *SetChassisControlCommand) NetFnRsLUN() NetFnRsLUN { return NewNetFnRsLUN(NetFnChassisReq, 0) }
+func (c *SetChassisControlCommand) String() string         { return cmdToJSON(c) }
+func (c *SetChassisControlCommand) Marshal() ([]byte, error) {
+	return []byte{c.PowerState}, nil
+}
+
+func (c *SetChassisControlCommand) Unmarshal(buf []byte) ([]byte, error) { return nil, nil }
+
 // Get System Restart Cause Command (Section 28.11)
 type GetSystemRestartCauseCommand struct {
 	// Response Data
