@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/k-sone/ipmigo"
+	"github.com/siro20/ipmigo"
 )
 
 // | Name | Type | Reading | Units | Status(for threshold-base) |

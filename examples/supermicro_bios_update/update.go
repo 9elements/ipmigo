@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/k-sone/ipmigo"
+	"github.com/siro20/ipmigo"
 )
 
 func supermicroBiosUpdate(c *ipmigo.Client, rom []byte) (err error) {
