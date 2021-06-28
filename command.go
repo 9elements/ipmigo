@@ -21,12 +21,12 @@ const (
 	CompletionReservationCancelled     CompletionCode = 0xc5
 	CompletionRequestDataTruncated     CompletionCode = 0xc6
 	CompletionRequestDataInvalidLength CompletionCode = 0xc7
-	CompletionRequestDataFieldExceedEd CompletionCode = 0xc8
+	CompletionRequestDataFieldExceeded CompletionCode = 0xc8
 	CompletionParameterOutOfRange      CompletionCode = 0xc9
 	CompletionCantReturnDataBytes      CompletionCode = 0xca
 	CompletionRequestDataNotPresent    CompletionCode = 0xcb
 	CompletionInvalidDataField         CompletionCode = 0xcc
-	CompletionIllegalSendorOrRecord    CompletionCode = 0xcd
+	CompletionIllegalSensorOrRecord    CompletionCode = 0xcd
 	CompletionCantBeProvided           CompletionCode = 0xce
 	CompletionDuplicatedRequest        CompletionCode = 0xcf
 	CompletionSDRInUpdateMode          CompletionCode = 0xd0
@@ -60,7 +60,7 @@ func (c CompletionCode) String() string {
 		return "Request data truncated"
 	case CompletionRequestDataInvalidLength:
 		return "Request data length invalid"
-	case CompletionRequestDataFieldExceedEd:
+	case CompletionRequestDataFieldExceeded:
 		return "Request data field length limit exceeded"
 	case CompletionParameterOutOfRange:
 		return "Parameter out of range"
@@ -70,7 +70,7 @@ func (c CompletionCode) String() string {
 		return "Requested Sensor, data, or record not present"
 	case CompletionInvalidDataField:
 		return "Invalid data field in Request"
-	case CompletionIllegalSendorOrRecord:
+	case CompletionIllegalSensorOrRecord:
 		return "Command illegal for specified sensor or record type"
 	case CompletionCantBeProvided:
 		return "Command response could not be provided"
